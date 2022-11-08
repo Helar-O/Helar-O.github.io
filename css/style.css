@@ -1,0 +1,491 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+:root {
+  --color-primary: #191d2b !important;
+  --color-secondary: #27AE60;
+  --color-white: #FFFFFF;
+  --color-dark-primary: #12151f;
+  --color-black: #000;
+  --color-grey: #6c7983;
+  --color-yellow: #a5ae27;
+  --color-red: #ae3b27;
+}
+
+.btn:hover {
+  background-color: var(--color-grey) !important;
+}
+
+.y {
+  background-color: var(--color-yellow);
+}
+
+.r {
+  background-color: var(--color-red);
+}
+
+.g {
+  background-color: var(--color-secondary);
+}
+
+.uly {
+  border: 1px solid var(--color-yellow);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.ulr {
+  border: 1px solid var(--color-red);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.ulg {
+  border: 1px solid var(--color-secondary);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.main-content {
+  background-color: var(--color-primary);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  color: var(--color-white);
+  transition: all 0.4s ease-in-out;
+}
+
+.poly {
+  clip-path: polygon(0 10%, 0 10%, 25% 100%, 27% 100%);
+  background-color: var(--color-secondary);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: center;
+}
+.textContainer p {
+  width: 90%;
+  padding: 0 2% 0 2%;
+  text-align: center;
+  margin-bottom: 4%;
+}
+.textContainer ul {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+li {
+  text-align: center;
+}
+
+img {
+  box-shadow: rgba(0, 0, 0, 0.45) 0 25px 20px -20px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+  z-index: 10;
+  align-items: center;
+}
+.controls .control {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: var(--color-grey);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 0.7rem 0;
+}
+.controls .active-btn {
+  background-color: var(--color-secondary) !important;
+  animation-name: btnPressed;
+  animation-duration: 0.4s;
+}
+.controls .active-btn:not(:hover) {
+  animation-duration: 0s;
+}
+
+@keyframes btnPressed {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+.control:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.1);
+}
+
+.control:not(:hover) {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1);
+}
+
+.section {
+  position: fixed;
+  padding: 3%;
+  transition: all 0.8s ease-in-out;
+}
+
+.active {
+  transition: all 0.8s ease-in-out;
+}
+
+.title {
+  text-align: center;
+}
+
+.borderBottom {
+  border-bottom: 1px solid var(--color-secondary);
+  width: 50%;
+  transform: translateX(50%);
+  margin-bottom: 2%;
+}
+
+.sec1 {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 95%;
+}
+.sec1 .headerTextContainer {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  height: 70vh;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.headerImageContainer {
+  width: 40%;
+  text-align: center;
+  object-fit: cover;
+}
+
+.headerTextContainer {
+  width: 60%;
+  margin-left: 3%;
+}
+
+.headerText {
+  padding: 3%;
+  font-size: 2vh;
+}
+
+.type {
+  width: 16ch;
+  animation: typing 2s steps(26), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+}
+
+.untype {
+  width: 16ch;
+  animation: untyping 1.2s steps(26), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes untyping {
+  to {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.sec2 {
+  margin-left: 100%;
+  width: 90%;
+}
+.sec2 .headerImageContainer {
+  padding-left: 5%;
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+
+p span {
+  color: var(--color-secondary);
+}
+
+.image2 {
+  height: 50vh;
+  width: 125%;
+  position: relative;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  object-fit: cover;
+  border-radius: 5%;
+  filter: brightness(80%) grayscale(20%);
+}
+
+.sec3 {
+  margin-left: 200%;
+  width: 90%;
+}
+.sec3 .skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+}
+.sec3 .skills .skill {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.45) 0 25px 20px -20px;
+}
+.sec3 .skills .experience {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 100%;
+  padding: 0 1rem 0 1rem;
+}
+.sec3 .skills ul {
+  padding: 0;
+  margin: 0;
+  border-bottom: none;
+}
+.sec3 .skills li {
+  padding-top: 2%;
+}
+.sec3 .skills li:last-child {
+  padding-bottom: 2%;
+}
+
+.sec4 {
+  margin-left: 300%;
+  width: 100%;
+  padding-right: 10%;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.sec4 .projectContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+.sec4 .project {
+  height: auto;
+  margin-bottom: 2%;
+  flex-basis: 44%;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-dark-primary);
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.45) 0 25px 20px -20px;
+}
+.sec4 .project a {
+  width: 20ch;
+}
+.sec4 .project div {
+  display: flex;
+  height: 100%;
+  padding: 0 2% 0 2%;
+  width: 40ch;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.95rem;
+}
+.sec4 .project p {
+  margin: 0;
+}
+.sec4 .projectImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.sec4 .projectImage:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.3);
+}
+
+.sec5 {
+  margin-left: 400%;
+  width: 90%;
+}
+
+@media only screen and (max-width: 768px) {
+  .controls {
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    top: auto;
+    right: auto;
+    bottom: 10px;
+    transform: translateY(0);
+  }
+  .controls .control {
+    margin: 0 0.7rem;
+  }
+
+  .poly {
+    clip-path: polygon(0 10%, 0 10%, 100% 48%, 100% 46%);
+  }
+
+  .sec1,
+.sec2,
+.sec3,
+.sec4,
+.sec5 {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .headerImageContainer {
+    width: 100%;
+  }
+
+  .headerTextContainer {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    justify-content: center;
+  }
+
+  .aboutContainer {
+    flex-direction: column-reverse;
+    padding-bottom: 10%;
+  }
+
+  .image2 {
+    top: auto;
+    transform: translateY(0);
+    position: inherit;
+    height: 40vh;
+    width: auto;
+    margin-bottom: 6%;
+  }
+
+  .sec2 .headerImageContainer {
+    padding-left: 0;
+  }
+
+  .sec2 .textContainer {
+    padding-bottom: 3%;
+  }
+
+  .section {
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .sec1 {
+    overflow-y: hidden;
+  }
+  .sec1 .headerTextContainer {
+    padding-bottom: 3%;
+  }
+
+  .sec1 .image {
+    height: 65vh;
+  }
+
+  .sec3 .skills {
+    flex-direction: column;
+    padding-bottom: 7%;
+  }
+  .sec3 .skill {
+    width: 80%;
+  }
+  .sec3 .experience {
+    text-align: center;
+  }
+  .sec3 .skill:last-child {
+    margin-bottom: 11%;
+  }
+
+  .sec4 .projectContainer {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+  .sec4 .project {
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 8%;
+  }
+  .sec4 .project a {
+    width: 100%;
+  }
+  .sec4 .project div {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+  .sec4 .project:last-child {
+    margin-bottom: 16%;
+  }
+  .sec4 .projectImage:hover {
+    transform: scale(1.05);
+  }
+}
+@media only screen and (max-height: 550px) {
+  .sec1 {
+    flex-direction: row;
+    height: 90%;
+  }
+  .sec1 h2 {
+    font-size: 2em;
+  }
+  .sec1 .poly {
+    z-index: -1;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .image2 {
+    height: 30vh;
+  }
+
+  .controls .control {
+    padding: 0.8rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
